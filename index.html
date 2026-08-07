@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>GH Search Engine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1 id="pageTitle">GH Search</h1>
+      <div class="search-box">
+        <input id="search" type="text" placeholder="keywords (proxy, bridge...)" />
+        <div class="filters">
+          <label>
+            <span id="focusLabel">Focus</span>
+            <select id="recencyFilter">
+              <option value="any">Any</option>
+              <option value="recent" selected>Most recent</option>
+              <option value="updated">Recently updated</option>
+            </select>
+          </label>
+          <label>
+            <span id="modeLabel">Mode</span>
+            <select id="matchMode">
+              <option value="smart">Smart</option>
+              <option value="strict">Strict</option>
+              <option value="free">Free</option>
+            </select>
+          </label>
+          <label class="checkbox-row">
+            <input id="freeMode" type="checkbox" />
+            <span id="freeModeLabel">Free search without extra filters</span>
+          </label>
+          <label class="checkbox-row">
+            <input id="includeArchived" type="checkbox" checked />
+            <span id="includeArchivedLabel">Include archived</span>
+          </label>
+        </div>
+      </div>
+      <div class="token-panel">
+        <label class="token-field">
+          <span id="tokenLabel">GitHub token</span>
+          <input id="tokenInput" type="password" placeholder="Paste your token here" />
+        </label>
+        <button id="saveTokenBtn" type="button">Save token</button>
+        <button id="helpBtn" type="button">How it works</button>
+      </div>
+      <p id="tokenStatus" class="helper">The token is stored locally in the browser and only used for searches.</p>
+      <p id="helperText" class="helper">Press Enter to search. Smart mode is more flexible and the recent filter highlights new or recently updated projects.</p>
+    </header>
+
+    <section id="helpModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <h2 id="helpTitle">How it works</h2>
+        <div id="helpContent"></div>
+        <button id="closeHelpBtn" type="button">Close</button>
+      </div>
+    </section>
+    </header>
+
+    <section id="results" class="results"></section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
