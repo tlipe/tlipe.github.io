@@ -2,7 +2,7 @@
 
 This repository can host multiple GitHub Pages projects under subfolders.
 
-- Main app: /
+- Main app: /gh-search/
 - Other sites: /project-name/
 - Another site: /another-project/
 
