@@ -24,6 +24,10 @@ const helperText = document.getElementById("helperText");
 const helpTitle = document.getElementById("helpTitle");
 
 let controller = null;
+
+if (freeMode) {
+  freeMode.checked = true;
+}
 const cache = new Map();
 const CACHE_TTL_MS = 5 * 60 * 1000;
 const MAX_VISIBLE_RESULTS = 12;
